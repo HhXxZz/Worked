@@ -34,7 +34,7 @@ public class Subject implements Serializable {
         this.results = results;
     }
 
-    public  class ResultsBean {
+    public static class ResultsBean {
         /**
          * _id : 59c30b37421aa9727ddd19b4
          * createdAt : 2017-09-21T08:43:35.381Z
