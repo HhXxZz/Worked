@@ -1,6 +1,8 @@
 package com.cn.example.mvp.model;
 
+import com.cn.example.bean.Subject;
 import com.cn.example.http.HttpUtils;
+import com.cn.example.http.api.Repository;
 import com.cn.example.http.api.ServerApi;
 import com.cn.example.http.listener.RequestCallBack;
 import com.cn.example.mvp.IModel;
@@ -8,7 +10,6 @@ import com.cn.example.mvp.IModel;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
-import okhttp3.ResponseBody;
 
 /**
  * Created by Administrator on 2017/9/20.
@@ -16,19 +17,19 @@ import okhttp3.ResponseBody;
 
 public class MainModel implements IModel {
 
-    public void getData(final RequestCallBack<String> callBack){
-        HttpUtils.getInstance().getHttpServer(ServerApi.class).getGankList()
+    public void getData(final RequestCallBack<Subject> callBack){
+        Repository.getRepository().getGankio()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Consumer<ResponseBody>() {
+                .subscribe(new Consumer<Subject>() {
                     @Override
-                    public void accept(ResponseBody responseBody) throws Exception {
-                        callBack.onSuccess(responseBody.string());
+                    public void accept(Subject subject) throws Exception {
+                        callBack.onSuccess(subject);
                     }
                 }, new Consumer<Throwable>() {
                     @Override
                     public void accept(Throwable throwable) throws Exception {
-                        callBack.onSuccess(throwable.getMessage());
+                        callBack.onError(0,throwable.getMessage());
                     }
                 });
     }

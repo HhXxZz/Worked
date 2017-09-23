@@ -1,6 +1,8 @@
 package com.cn.example.http.api;
 
 
+import com.cn.example.bean.Subject;
+
 import io.reactivex.Observable;
 import okhttp3.ResponseBody;
 import retrofit2.http.GET;
@@ -12,6 +14,6 @@ import retrofit2.http.GET;
 public interface ServerApi {
 
     @GET("api/data/福利/10/1")
-    Observable<ResponseBody>getGankList();
+    Observable<Subject>getGankList();
 
 }

@@ -139,8 +139,8 @@ public class HttpUtils {
                     .readTimeout(20, TimeUnit.SECONDS)
                     .connectTimeout(10, TimeUnit.SECONDS)
                     .writeTimeout(20, TimeUnit.SECONDS)
-                    .addInterceptor(mRewriteCacheControlInterceptor)
-                    .addNetworkInterceptor(mRewriteCacheControlInterceptor)
+                    //.addInterceptor(mRewriteCacheControlInterceptor)
+                    //.addNetworkInterceptor(mRewriteCacheControlInterceptor)
                     .addInterceptor(getInterceptor());
 
             //okBuilder.sslSocketFactory(sslSocketFactory);

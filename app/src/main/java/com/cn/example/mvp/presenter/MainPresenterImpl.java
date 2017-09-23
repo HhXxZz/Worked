@@ -1,5 +1,6 @@
 package com.cn.example.mvp.presenter;
 
+import com.cn.example.bean.Subject;
 import com.cn.example.http.listener.RequestCallBack;
 import com.cn.example.mvp.base.BasePresenter;
 import com.cn.example.mvp.contract.MainContract;
@@ -14,9 +15,9 @@ public class MainPresenterImpl extends BasePresenter<MainModel,MainActivity> imp
 
     @Override
     public void getData() {
-        getModel().getData(new RequestCallBack<String>() {
+        getModel().getData(new RequestCallBack<Subject>() {
             @Override
-            public void onSuccess(String data) {
+            public void onSuccess(Subject data) {
                 getIView().getDataSuccess(data);
             }
 
