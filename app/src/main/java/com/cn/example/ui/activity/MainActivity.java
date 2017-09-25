@@ -2,10 +2,12 @@ package com.cn.example.ui.activity;
 
 
 import android.Manifest;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.cn.example.R;
+import com.cn.example.app.GlideApp;
 import com.cn.example.base.BaseActivity;
 import com.cn.example.bean.Subject;
 import com.cn.example.mvp.contract.MainContract;
@@ -47,13 +49,14 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements Mai
     private void initRecyclerView() {
         mData = new ArrayList<>();
         mHomeAdapter = new HomeAdapter(R.layout.item_img,mData);
-        mRecyclerView.setLayoutManager(new StaggeredGridLayoutManager(2,StaggeredGridLayoutManager.VERTICAL));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this,2));
 
         mRecyclerView.setAdapter(mHomeAdapter);
         mHomeAdapter.setEnableLoadMore(true);
     }
 
     private void requestPermission() {
+
         RxPermissions rxPermission = new RxPermissions(this);
         rxPermission
                 .requestEach(Manifest.permission.WRITE_EXTERNAL_STORAGE,

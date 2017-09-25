@@ -1,10 +1,6 @@
 package com.cn.example.app;
 
-import android.app.Activity;
 import android.app.Application;
-import android.content.pm.PackageManager;
-import android.support.v4.app.ActivityCompat;
-
 
 /**
  * Created by Administrator on 2017/6/7.
@@ -23,9 +19,6 @@ public class App extends Application {
     }
 
 
-
-
-
     /**
      * 得到APP实例
      * @return
@@ -33,9 +26,6 @@ public class App extends Application {
     public static App getInstance(){
         return instance;
     }
-
-
-
 
 
 }
