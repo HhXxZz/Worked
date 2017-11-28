@@ -1,0 +1,88 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* proguard-project.txt
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.+
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => customwebview\src\main\AndroidManifest.xml
+* assets\ => customwebview\src\main\assets\
+* libs\armeabi-v7a\libchromeview.so => customwebview\src\main\jniLibs\armeabi-v7a\libchromeview.so
+* libs\guava_javalib.jar => customwebview\libs\guava_javalib.jar
+* libs\jsr_305_javalib.jar => customwebview\libs\jsr_305_javalib.jar
+* res\ => customwebview\src\main\res\
+* src\ => customwebview\src\main\java\
+* src\com\googlecode\eyesfree\braille\display\BrailleDisplayProperties.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\display\BrailleDisplayProperties.aidl
+* src\com\googlecode\eyesfree\braille\display\BrailleInputEvent.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\display\BrailleInputEvent.aidl
+* src\com\googlecode\eyesfree\braille\display\IBrailleService.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\display\IBrailleService.aidl
+* src\com\googlecode\eyesfree\braille\display\IBrailleServiceCallback.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\display\IBrailleServiceCallback.aidl
+* src\com\googlecode\eyesfree\braille\selfbraille\ISelfBrailleService.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\selfbraille\ISelfBrailleService.aidl
+* src\com\googlecode\eyesfree\braille\selfbraille\WriteData.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\selfbraille\WriteData.aidl
+* src\com\googlecode\eyesfree\braille\translate\ITranslatorService.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\translate\ITranslatorService.aidl
+* src\com\googlecode\eyesfree\braille\translate\ITranslatorServiceCallback.aidl => customwebview\src\main\aidl\com\googlecode\eyesfree\braille\translate\ITranslatorServiceCallback.aidl
+* src\org\chromium\base\ActivityState.template => customwebview\src\main\resources\org\chromium\base\ActivityState.template
+* src\org\chromium\base\MemoryPressureLevelList.template => customwebview\src\main\resources\org\chromium\base\MemoryPressureLevelList.template
+* src\org\chromium\content\browser\GestureEventType.template => customwebview\src\main\resources\org\chromium\content\browser\GestureEventType.template
+* src\org\chromium\content\browser\input\PopupItemType.template => customwebview\src\main\resources\org\chromium\content\browser\input\PopupItemType.template
+* src\org\chromium\content\browser\OWNERS => customwebview\src\main\resources\org\chromium\content\browser\OWNERS
+* src\org\chromium\content\browser\PageTransitionTypes.template => customwebview\src\main\resources\org\chromium\content\browser\PageTransitionTypes.template
+* src\org\chromium\content\browser\SpeechRecognitionError.template => customwebview\src\main\resources\org\chromium\content\browser\SpeechRecognitionError.template
+* src\org\chromium\content\common\IChildProcessCallback.aidl => customwebview\src\main\aidl\org\chromium\content\common\IChildProcessCallback.aidl
+* src\org\chromium\content\common\IChildProcessService.aidl => customwebview\src\main\aidl\org\chromium\content\common\IChildProcessService.aidl
+* src\org\chromium\content\common\ResultCodes.template => customwebview\src\main\resources\org\chromium\content\common\ResultCodes.template
+* src\org\chromium\content\common\TopControlsState.template => customwebview\src\main\resources\org\chromium\content\common\TopControlsState.template
+* src\org\chromium\content_public\DEPS => customwebview\src\main\resources\org\chromium\content_public\DEPS
+* src\org\chromium\media\ImageFormat.template => customwebview\src\main\resources\org\chromium\media\ImageFormat.template
+* src\org\chromium\net\IRemoteAndroidKeyStore.aidl => customwebview\src\main\aidl\org\chromium\net\IRemoteAndroidKeyStore.aidl
+* src\org\chromium\net\IRemoteAndroidKeyStoreCallbacks.aidl => customwebview\src\main\aidl\org\chromium\net\IRemoteAndroidKeyStoreCallbacks.aidl
+* src\OWNERS => customwebview\src\main\resources\OWNERS
+
+Missing Android Support Repository:
+-----------------------------------
+Some useful libraries, such as the Android Support Library, are
+installed from a special Maven repository, which should be installed
+via the SDK manager.
+
+It looks like this library is missing from your SDK installation at:
+null
+
+To install it, open the SDK manager, and in the Extras category,
+select "Android Support Repository". You may also want to install the
+"Google Repository" if you want to use libraries like Google Play
+Services.
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:id="@+id/fl_video_box"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:background="@android:color/black"
+    >
+
+    <!-- MediaPlayer -->
+    <SurfaceView
+        android:id="@+id/surface_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 加载视图 -->
+    <RelativeLayout
+        android:id="@+id/rl_wait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            />
+
+        <TextView
+            android:layout_below="@+id/progress_bar"
+            android:id="@+id/tv_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="正在缓冲~~"
+            android:textColor="#ffffff"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            />
+
+    </RelativeLayout>
+
+
+    <!-- 顶部控件 -->
+    <include layout="@layout/layout_tv_top_bar" />
+
+
+    <!-- 底部控件 -->
+    <include layout="@layout/layout_tv_bottom_bar" />
+
+    <!-- 视频中间控件/图标 -->
+    <include layout="@layout/layout_tv_center_ctrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <ImageView
+        android:id="@+id/iv_play_circle"
+        android:src="@mipmap/ic_play_icon"
+        android:layout_gravity="center"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:visibility="gone"
+        />
+
+
+</FrameLayout>

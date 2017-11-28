@@ -4,10 +4,8 @@ package com.cn.example.ui.activity;
 import android.Manifest;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 
 import com.cn.example.R;
-import com.cn.example.app.GlideApp;
 import com.cn.example.base.BaseActivity;
 import com.cn.example.bean.Subject;
 import com.cn.example.mvp.contract.MainContract;
@@ -43,6 +41,7 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements Mai
         //verifyStoragePermissions(this);
         initRecyclerView();
         requestPermission();
+
 
     }
 
