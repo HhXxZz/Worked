@@ -136,6 +136,8 @@ public class MediaPlayerVideoView extends FrameLayout implements View.OnClickLis
         }
     };
 
+
+
     private boolean isTVLive;
 
     public MediaPlayerVideoView(@NonNull Context context){
@@ -286,6 +288,7 @@ public class MediaPlayerVideoView extends FrameLayout implements View.OnClickLis
                     IS_LIVE = false;
                 }
                 onPreparedListener.onPrepared(mp);
+                mHandler.postDelayed(bufferingRunnable, 500);
             }
         });
         mediaPlayer.setOnErrorListener(new MediaPlayer.OnErrorListener() {
@@ -309,7 +312,23 @@ public class MediaPlayerVideoView extends FrameLayout implements View.OnClickLis
             }
         });
 
+
+
     }
+
+    private int oldDuration;
+    private Runnable bufferingRunnable = new Runnable() {
+        public void run() {
+            int duration = mediaPlayer.getCurrentPosition();
+            if (oldDuration == duration && mediaPlayer.isPlaying()) {
+                mLoadView.setVisibility(VISIBLE);
+            } else {
+                mLoadView.setVisibility(GONE);
+            }
+            oldDuration = duration;
+            mHandler.postDelayed(bufferingRunnable, 500);
+        }
+    };
 
     public interface OnPreparedListener{
         boolean onPrepared(MediaPlayer iMediaPlayer);
@@ -353,6 +372,7 @@ public class MediaPlayerVideoView extends FrameLayout implements View.OnClickLis
         isPlaying = true;
         isPauseing = false;
         mHandler.sendEmptyMessage(MSG_UPDATE_SEEK);
+        mHandler.postDelayed(bufferingRunnable,500);
     }
 
 
@@ -360,6 +380,7 @@ public class MediaPlayerVideoView extends FrameLayout implements View.OnClickLis
      * 暂停
      */
     public void pause() {
+        mHandler.removeCallbacks(bufferingRunnable);
         if (mediaPlayer.isPlaying()) {
             ivCtrl.setSelected(false);
             isPlaying = false;
@@ -721,6 +742,7 @@ public class MediaPlayerVideoView extends FrameLayout implements View.OnClickLis
 
         @Override
         public boolean onDown(MotionEvent e) {
+            showBar();
             isDownTouch = true;
             return super.onDown(e);
         }
