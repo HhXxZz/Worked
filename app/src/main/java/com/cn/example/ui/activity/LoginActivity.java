@@ -1,5 +1,6 @@
 package com.cn.example.ui.activity;
 
+import android.support.v7.app.AppCompatDelegate;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -46,14 +47,18 @@ public class LoginActivity extends BaseActivity<LoginPresenterImpl> implements L
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.login(getUserName(),getPwd());
+                //presenter.login(getUserName(),getPwd());
+                getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                recreate();
             }
         });
 
         btnCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                presenter.getCode();
+                //presenter.getCode();
+                getDelegate().setLocalNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                recreate();
             }
         });
 
