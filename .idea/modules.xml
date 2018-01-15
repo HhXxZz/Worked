@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MyApplication.iml" filepath="$PROJECT_DIR$/MyApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/playerview/playerviews.iml" filepath="$PROJECT_DIR$/playerview/playerviews.iml" />
+      <module fileurl="file://F:\GitFan28\MyApplication\playerview\playerviews.iml" filepath="F:\GitFan28\MyApplication\playerview\playerviews.iml" />
     </modules>
   </component>
 </project>

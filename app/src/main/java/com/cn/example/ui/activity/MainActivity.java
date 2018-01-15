@@ -42,7 +42,6 @@ public class MainActivity extends BaseActivity<MainPresenterImpl> implements Mai
         initRecyclerView();
         requestPermission();
 
-
     }
 
     private void initRecyclerView() {

@@ -8,7 +8,7 @@
     android:background="@android:color/black"
     >
     <!-- IJK播放器 -->
-    <com.dl7.player.media.IjkVideoView
+    <com.player.media.IjkVideoView
         android:id="@+id/ijk_video_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
@@ -46,7 +46,7 @@
 
 
     <!-- 底部控件 -->
-    <include layout="@layout/layout_tv_bottom_bar" />
+    <include layout="@layout/layout_bottom_bar" />
 
     <!-- 视频中间控件/图标 -->
     <include layout="@layout/layout_tv_center_ctrl"
